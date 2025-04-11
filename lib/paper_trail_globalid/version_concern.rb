@@ -1,11 +1,12 @@
 module PaperTrailGlobalid
   module VersionConcern
-    def whodunnit=(value)
-      if value.is_a? ActiveRecord::Base
-        super(value.to_gid)
+    def whodunnit=(input_value)
+      whodunnit_value = if input_value.is_a?(ActiveRecord::Base)
+        input_value.to_gid
       else
-        super
+        input_value
       end
+      _write_attribute("whodunnit", whodunnit_value)
     end
 
     # Returns an object which was responsible for a change
