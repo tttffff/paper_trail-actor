@@ -18,16 +18,16 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'paper_trail', '>= 3.0.0'
-  spec.add_dependency 'globalid'
+  spec.add_dependency "paper_trail", ">= 9.0.0"
+  spec.add_dependency "globalid"
 
-  spec.add_development_dependency 'appraisal', '~> 2.1'
-  spec.add_development_dependency "bundler", "~> 1.6"
+  spec.add_development_dependency "appraisal", "~> 2.1"
+  spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 3.3.0"
   spec.add_development_dependency "coveralls", "~> 0.8.2"
-  spec.add_development_dependency "activerecord", ">=3.2.0"
-  spec.add_development_dependency "activesupport", ">=3.2.0"
+  spec.add_development_dependency "activerecord", ">= 3.2.0"
+  spec.add_development_dependency "activesupport", ">= 3.2.0"
   spec.add_development_dependency "sqlite3"
   spec.add_development_dependency "byebug"
 end
