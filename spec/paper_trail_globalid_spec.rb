@@ -16,7 +16,7 @@ describe PaperTrailGlobalid do
         t.string :name
       end
 
-      create_table :versions do |t|
+      create_table :versions, force: true do |t|
         t.string   :item_type, :null => false
         t.integer  :item_id,   :null => false
         t.string   :event,     :null => false
@@ -30,6 +30,7 @@ describe PaperTrailGlobalid do
   after(:all) do
     ActiveRecord::Schema.define do
       drop_table :orders
+      drop_table :admins
       drop_table :versions
     end
     ActiveRecord::Migration.verbose = true
@@ -43,20 +44,20 @@ describe PaperTrailGlobalid do
       @version = @order.versions.last
     end
 
-    describe 'paper_trail' do
+    describe 'request' do
       describe 'class_methods' do
-        describe 'PaperTrail.actor' do
+        describe '.actor' do
           context 'when value for whodunnit is object of ActiveRecord' do
             it 'returns object' do
-              PaperTrail.whodunnit=@admin
-              expect(PaperTrail.actor).to eq(@admin)
+              PaperTrail.request.whodunnit=@admin
+              expect(PaperTrail.request.actor).to eq(@admin)
             end
           end
 
           context 'when value for whodunnit is not an object of ActiveRecord' do
             it 'returns value itself' do
-              PaperTrail.whodunnit="test"
-              expect(PaperTrail.actor).to eq("test")
+              PaperTrail.request.whodunnit="test"
+              expect(PaperTrail.request.actor).to eq("test")
             end
           end
         end
@@ -64,15 +65,15 @@ describe PaperTrailGlobalid do
         describe '.whodunnit' do
           context 'when value for whodunnit is object of ActiveRecord' do
             it 'returns global id' do
-              PaperTrail.whodunnit=@admin
-              expect(PaperTrail.paper_trail_store[:whodunnit]).to eq(@admin.to_gid)
+              PaperTrail.request.whodunnit=@admin
+              expect(PaperTrail.request.whodunnit).to eq(@admin.to_gid)
             end
           end
 
           context 'when value for whodunnit is not an object of ActiveRecord' do
             it 'returns value itself' do
-              PaperTrail.whodunnit="test"
-              expect(PaperTrail.paper_trail_store[:whodunnit]).to eq("test")
+              PaperTrail.request.whodunnit="test"
+              expect(PaperTrail.request.whodunnit).to eq("test")
             end
           end
         end

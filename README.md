@@ -30,15 +30,16 @@ widget = Widget.find 42
 widget.versions               # [<PaperTrail::Version>, <PaperTrail::Version>, ...]
 v = widget.versions.last
 ```
-Now you can also store object to `PaperTrail.whodunnit=`, and if object will be instance of `ActiveRecord::Base` it will store the global id in the version's `whodunnit` column.
+Now you can also store object to `PaperTrail.request.whodunnit=`, and if object will be instance of `ActiveRecord::Base` it will store the global id in the version's `whodunnit` column.
 
 And you can also retrieve the actually object later just by using method `actor`.
 
 ```ruby
 admin = Admin.find(1)                       # <Admin:0x007fa2df9a5590>
 
-PaperTrail.whodunnit = admin
-PaperTrail.actor                            # <Admin:0x007fa2df9a5590> actual object
+PaperTrail.request.whodunnit = admin
+PaperTrail.request.whodunnit                # "gid://app/Admin/1"
+PaperTrail.request.actor                    # <Admin:0x007fa2df9a5590> actual object
 
 widget.update_attributes :name => 'Wibble'
 widget.versions.last.whodunnit              # "gid://app/Admin/1"
@@ -48,8 +49,9 @@ widget.versions.last.actor                  # returns the actual object
 Method `actor` will return the whodunnit value if we pass value another than `ActiveRecord` object.
 
 ```ruby
-PaperTrail.whodunnit = 'admin_name'
-PaperTrail.actor                            # "admin_name"
+PaperTrail.request.whodunnit = 'admin_name'
+PaperTrail.request.whodunnit                # "admin_name"
+PaperTrail.request.actor                    # "admin_name"
 
 widget.update_attributes :name => 'Wibble'
 widget.versions.last.whodunnit              # "admin_name"
