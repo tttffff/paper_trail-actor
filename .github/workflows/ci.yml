@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Don't do every single combination, just a range of possible ones.
+        include:
+          - ruby-version: "2.7"
+            paper_trail-verion: "= 11.0.0"
+          - ruby-version: "2.7"
+            paper_trail-verion: "~> 12"
+          - ruby-version: "2.7"
+            paper_trail-verion: "~> 14"
+          - ruby-version: "3.0" # Can not test PaperTrail >= 15.0.0 with Ruby < 3.0.
+            paper_trail-verion: "~> 16"
+          - ruby-version: "head"
+            paper_trail-verion: "~> 11"
+          - ruby-version: "head"
+            paper_trail-verion: "~> 13"
+          - ruby-version: "head"
+            paper_trail-verion: "~> 15"
+          - ruby-version: "head"
+            paper_trail-verion: "~> 16" # Latest PaperTrail version tested with multiple Ruby versions.
+    env:
+      PAPER_TRAIL-GLOBALID__PAPER_TRAIL_VERSION: "${{ matrix.paper_trail-verion }}"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby ${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+      - name: Run the test task
+        run: bundle exec rake spec
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby latest stable release
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "ruby" # Latest stable release
+          bundler-cache: true
+      - name: Run the link task
+        run: bundle exec rake standard
