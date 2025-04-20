@@ -16,7 +16,7 @@
 
 ## [0.3.0] - 2025-04-11
 
-- Initial release of paper_trail-actor
+- Bring fixes in and allow updated gem to be installed from GitHub.
 
 ### Breaking Changes
 
@@ -29,13 +29,15 @@
 
 ### Fixed
 
-- [#1](https://github.com/tttffff/paper_trail-globalid/pull/1) - Update to modern paper_trail.
+- [#1](https://github.com/tttffff/paper_trail-actor/pull/1) - Update to modern paper_trail.
   Update to use the interface of PaperTrail 9.0.0 onwards.
-- [#2](https://github.com/tttffff/paper_trail-globalid/pull/2) - Allow for using custom paper trail version classes.
+- [#2](https://github.com/tttffff/paper_trail-actor/pull/2) - Allow for using custom paper trail version classes.
   Change version mixin to allow for PaperTrail [custom-version-classes](https://github.com/paper-trail-gem/paper_trail#6a-custom-version-classes).
 
 
 ## [0.4.0] - 2025-04-20
+
+- Initial release of paper_trail-actor
 
 ### Breaking Changes
 

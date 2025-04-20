@@ -1,4 +1,4 @@
-module PaperTrailGlobalid
+module PaperTrailActor
   module VersionConcern
     def whodunnit=(input_value)
       whodunnit_value = if input_value.is_a?(ActiveRecord::Base)
