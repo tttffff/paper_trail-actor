@@ -4,7 +4,7 @@ module PaperTrailGlobalid
       if value.is_a? ActiveRecord::Base
         super(value.to_gid)
       else
-        super(value)
+        super
       end
     end
 
