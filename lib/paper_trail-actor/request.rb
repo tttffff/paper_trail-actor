@@ -1,4 +1,4 @@
-module PaperTrailGlobalid
+module PaperTrailActor
   module Request
     def whodunnit=(value)
       if value.is_a? ActiveRecord::Base

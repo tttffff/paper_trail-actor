@@ -1,7 +1,7 @@
 require "sqlite3"
 require "active_record"
 require "byebug"
-require_relative "../lib/paper_trail-globalid"
+require_relative "../lib/paper_trail-actor"
 require_relative "support/database_connection"
 
 RSpec.configure do |config|

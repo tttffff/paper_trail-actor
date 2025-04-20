@@ -30,7 +30,7 @@ jobs:
           - ruby-version: "head"
             paper_trail-verion: "~> 16" # Latest PaperTrail version tested with multiple Ruby versions.
     env:
-      PAPER_TRAIL-GLOBALID__PAPER_TRAIL_VERSION: "${{ matrix.paper_trail-verion }}"
+      PAPER_TRAIL-ACTOR__PAPER_TRAIL_VERSION: "${{ matrix.paper_trail-verion }}"
     steps:
       - uses: actions/checkout@v4
       - name: Set up Ruby ${{ matrix.ruby-version }}

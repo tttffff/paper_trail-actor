@@ -2,4 +2,4 @@
 Gemfile.lock
 .byebug_history
 spec/examples.txt
-paper_trail_globalid_test
+paper_trail-actor_test

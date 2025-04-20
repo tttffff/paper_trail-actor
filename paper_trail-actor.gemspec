@@ -1,20 +1,20 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require "paper_trail_globalid/version"
+require "paper_trail-actor/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "paper_trail-globalid"
-  spec.version = PaperTrailGlobalid::VERSION
-  spec.authors = ["Ankit"]
-  spec.email = ["ankit.bansal1910@gmail.com"]
-  spec.summary = "An extension to paper_trail, using this you can fetch actual object who was responsible for this change"
-  spec.description = "An extension to paper_trail, using this you can fetch actual object who was responsible for this change"
-  spec.homepage = "https://github.com/ankit1910/paper_trail-globalid"
+  spec.name = "paper_trail-actor"
+  spec.version = PaperTrailActor::VERSION
+  spec.authors = ["tttffff"]
+  spec.email = ["tristanfellows@icloud.com"]
+  spec.summary = "An extension to PaperTrail. Using this gem, you can fetch the ActiveRecord object that was responsible for changes"
+  spec.description = "An extension to PaperTrail. Using this gem, you can fetch the ActiveRecord object that was responsible for changes"
+  spec.homepage = "https://github.com/tttffff/paper_trail-actor"
   spec.license = "MIT"
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
-  spec.metadata["changelog_uri"] = "https://github.com/tttffff/paper_trail-globalid/blob/master/CHANGELOG.md"
+  spec.metadata["changelog_uri"] = spec.homepage + "/blob/master/CHANGELOG.md"
 
   gemspec = File.basename(__FILE__)
   ignore_files_starting_with = %w[spec/ .git .github Gemfile] << gemspec

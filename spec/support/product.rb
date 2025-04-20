@@ -1,5 +1,5 @@
 require "paper_trail"
-require "paper_trail-globalid"
+require "paper_trail-actor"
 
 # See https://github.com/paper-trail-gem/paper_trail#6a-custom-version-classes
 
