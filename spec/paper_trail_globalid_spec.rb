@@ -3,7 +3,7 @@ require_relative "../spec/support/admin"
 require_relative "../spec/support/order"
 require_relative "../spec/support/product"
 
-describe PaperTrailGlobalid do
+RSpec.describe PaperTrailGlobalid do
   before(:all) do
     ActiveRecord::Migration.verbose = false
     ActiveRecord::Schema.define do
