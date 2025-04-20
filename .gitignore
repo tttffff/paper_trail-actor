@@ -1,5 +1,6 @@
 .bundle
-Gemfile.lock
 .byebug_history
-spec/examples.txt
+Gemfile.lock
+paper_trail-actor*.gem
 paper_trail-actor_test
+spec/examples.txt
