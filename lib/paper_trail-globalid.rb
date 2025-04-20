@@ -1,5 +1,5 @@
-require "paper_trail_globalid/paper_trail"
 require "paper_trail_globalid/version"
+require "paper_trail_globalid/request"
 require "paper_trail_globalid/version_concern"
 
 module ::PaperTrail
