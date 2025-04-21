@@ -1,15 +1,11 @@
+require_relative "actor_mixin"
+
 module PaperTrailActor
   module Request
-    def whodunnit=(value)
-      if value.is_a? ActiveRecord::Base
-        super(value.to_gid)
-      else
-        super
-      end
-    end
+    include ActorMixin
 
-    def actor
-      ::GlobalID::Locator.locate(store[:whodunnit]) || whodunnit
+    def whodunnit=(input_value)
+      super(global_id_string_or_fallback(input_value))
     end
   end
 end
