@@ -1,7 +1,5 @@
 require "spec_helper"
 require_relative "../support/actors"
-require_relative "../support/models/order"
-require_relative "../support/models/product"
 
 module PaperTrailActor
   RSpec.describe VersionConcern do
@@ -85,7 +83,7 @@ module PaperTrailActor
           it "returns the global id string for the object" do
             version.whodunnit = brand_with_id
             version.save
-            expect(version.whodunnit).to eq "gid://App/Brand/2"
+            expect(version.whodunnit).to eq "gid://test-audit-app/Brand/2"
           end
         end
 
