@@ -1,8 +1,8 @@
 require "sqlite3"
 require "active_record"
 require "byebug"
-require_relative "../lib/paper_trail-actor"
-require_relative "support/database_connection"
+require "paper_trail-actor"
+require_relative "support/database"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -22,4 +22,5 @@ RSpec.configure do |config|
   config.profile_examples = 3
   config.order = :random
   Kernel.srand config.seed
+  add_database_actions(config)
 end
