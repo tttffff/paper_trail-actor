@@ -4,3 +4,6 @@ Gemfile.lock
 paper_trail-actor*.gem
 paper_trail-actor_test
 spec/examples.txt
+spec/support/test_audit_app/db/test_audit_app.sqlite3
+spec/support/test_audit_app/log
+spec/support/test_audit_app/tmp

@@ -73,7 +73,7 @@ module PaperTrailActor
       context "when value for whodunnit has a #to_global_id method and an id set" do
         it "returns the global id" do
           PaperTrail.request.whodunnit = brand_with_id
-          expect(PaperTrail.request.whodunnit).to eq("gid://App/Brand/2")
+          expect(PaperTrail.request.whodunnit).to eq("gid://test-audit-app/Brand/2")
         end
       end
 

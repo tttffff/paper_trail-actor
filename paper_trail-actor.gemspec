@@ -9,12 +9,12 @@ Gem::Specification.new do |spec|
   spec.authors = ["tttffff"]
   spec.email = ["tristanfellows@icloud.com"]
   spec.summary = "An extension to PaperTrail. Using this gem, you can fetch the ActiveRecord object that was responsible for changes"
-  spec.description = "An extension to PaperTrail. Using this gem, you can fetch the ActiveRecord object that was responsible for changes"
+  spec.description = spec.summary
   spec.homepage = "https://github.com/tttffff/paper_trail-actor"
   spec.license = "MIT"
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
-  spec.metadata["changelog_uri"] = spec.homepage + "/blob/master/CHANGELOG.md"
+  spec.metadata["changelog_uri"] = spec.homepage + "/blob/main/CHANGELOG.md"
 
   gemspec = File.basename(__FILE__)
   ignore_files_starting_with = %w[spec/ .git .github Gemfile] << gemspec
@@ -30,9 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "globalid" # Also a dependency of standard rails gems.
 
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "activerecord"
-  spec.add_development_dependency "activesupport"
+  spec.add_development_dependency "rspec-rails"
   spec.add_development_dependency "sqlite3"
   spec.add_development_dependency "byebug"
   spec.add_development_dependency "standard"

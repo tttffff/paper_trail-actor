@@ -1,7 +1,4 @@
-require "globalid"
-
 # A possible actor in the spec system.
-# For example, a background job is ran for each brand which modifies an order.
 
 class Brand
   include ::GlobalID::Identification
@@ -14,7 +11,7 @@ class Brand
 
   def self.find(id)
     name = BRANDS[id] || "Company name"
-    new(id, name)
+    new(id.presence, name)
   end
 
   attr_reader :id, :name
