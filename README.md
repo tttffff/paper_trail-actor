@@ -104,7 +104,7 @@ You can set the user for PaperTrail in the same way that the [PaperTrail documen
 
 However, setting this to an ActiveRecord object now records the globalid. It also allows the object to be retrived from created PaperTrail versions with the `#actor` method.
 
-If your controller has a `#current_user` method, PaperTrail-Actor will assign the globalid of the current user to whodunnit. If your controller doesn't have a `#current_user` or if the current user is `nil`, then whodunnit will not be set.
+If your controller has a `#current_user` method, PaperTrail-Actor will assign the globalid of the current user to whodunnit. If your controller doesn't have a `#current_user`, or if the current user is `nil`, then whodunnit will not be set.
 
 You may want set `#user_for_paper_trail` to call a different method to find out who is responsible. To do so, override the `#user_for_paper_trail` method in your controller:
 
