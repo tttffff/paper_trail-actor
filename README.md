@@ -1,7 +1,5 @@
 # PaperTrail-Actor
 
-*Originally forked from the now unmaintained [PaperTrailGlobalid](https://github.com/ankit1910/paper_trail-globalid).*
-
 This gem is an extension for [PaperTrail](https://github.com/paper-trail-gem/paper_trail) that allows you to set an `ActiveRecord` object as the "whodunnit" field. This enhancement provides more granular tracking of who made changes, making it easier to trace modifications in your application.
 
 ## Features
