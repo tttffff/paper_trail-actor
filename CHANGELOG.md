@@ -52,3 +52,21 @@
 ### Fixed
 
 - None
+
+## [0.5.0] - 2025-04-29
+
+- Small improvements.
+
+### Breaking Changes
+
+- None
+
+### Added
+
+- [#12](https://github.com/tttffff/paper_trail-actor/pull/12) Default user for paper trail.
+  When using `#set_paper_trail_whodunnit`, the default `#user_for_paper_trail` is now the `#current_user` object, not it's `id`.
+
+### Fixed
+
+- [#10](https://github.com/tttffff/paper_trail-actor/pull/10) Allow other object types.
+  Can now use any object that implements globalid, not just ActiveRecord objects.
