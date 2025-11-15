@@ -2,6 +2,7 @@
 
 class ApplicationVersion < ActiveRecord::Base
   include PaperTrail::VersionConcern
+
   self.abstract_class = true
 end
 

@@ -70,3 +70,17 @@
 
 - [#10](https://github.com/tttffff/paper_trail-actor/pull/10) Allow other object types.
   Can now use any object that implements globalid, not just ActiveRecord objects.
+ 
+## [0.5.1] - 2025-11-15
+
+### Breaking Changes
+
+- None
+
+### Added
+
+- None
+
+### Fixed
+
+- Explicitly set required ruby version.
