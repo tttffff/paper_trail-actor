@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version = PaperTrailActor::VERSION
   spec.authors = ["tttffff"]
   spec.email = ["tristanfellows@icloud.com"]
-  spec.summary = "An extension to PaperTrail. Using this gem, you can fetch the ActiveRecord object that was responsible for changes"
-  spec.description = spec.summary
+  spec.summary = "Fetch the ActiveRecord object responsible for PaperTrail changes"
+  spec.description = "An extension to PaperTrail that allows you to retrieve the ActiveRecord object (actor) that was responsible for creating or modifying records, enabling better audit trails and change attribution."
   spec.homepage = "https://github.com/tttffff/paper_trail-actor"
   spec.license = "MIT"
   spec.metadata["homepage_uri"] = spec.homepage
@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.executables = []
   spec.require_paths = ["lib"]
 
+  spec.required_ruby_version = ">= 2.7"
   spec.add_dependency "paper_trail", ">= 11.0.0"
   spec.add_dependency "globalid" # Also a dependency of standard rails gems.
 
