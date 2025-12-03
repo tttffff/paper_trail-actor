@@ -1,6 +1,6 @@
 # PaperTrail-Actor
 
-Track changes in your Rails application with precision. PaperTrail-Actor extends [PaperTrail](https://github.com/paper-trail-gem/paper_trail) to store full ActiveRecord objects (not just IDs) as the actor responsible for changes.
+Track changes in your Rails application. PaperTrail-Actor extends [PaperTrail](https://github.com/paper-trail-gem/paper_trail) to store full ActiveRecord objects (not just IDs) as the actor responsible for changes.
 
 **Problem it solves:** When both `Admin` and `User` models can modify records, storing only an ID makes it impossible to know which model type made the change. PaperTrail-Actor stores GlobalIDs to uniquely identify actors across different model types.
 
@@ -26,7 +26,6 @@ Track changes in your Rails application with precision. PaperTrail-Actor extends
 ## Requirements
 
 - Ruby 2.7+
-- Rails 6.0+
 - PaperTrail 11.0+
 
 ## Installation
